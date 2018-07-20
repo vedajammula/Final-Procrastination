@@ -27,12 +27,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func addItemButtonPressed(_ sender: UIBarButtonItem) {
         // Create the alert controller
-        let alertController = UIAlertController(title: "Add an Assignment", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Add Task", message: "", preferredStyle: UIAlertControllerStyle.alert)
         
         
         
         alertController.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "Enter Assignment Name"
+            textField.placeholder = "Enter Task Name"
           
             
         }
@@ -49,6 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
             }
             self.tableView.reloadData()
+            self.startOutlet.isHidden = false
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
@@ -132,7 +133,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        startOutlet.isHidden = true
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.

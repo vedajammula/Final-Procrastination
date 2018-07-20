@@ -56,7 +56,7 @@ class CountdownViewController: UIViewController {
     @objc func counter()
     {
         multipleTimers![index] -= 1
-        timeLabel.text = String(multipleTimers![index]) + "seconds"
+        timeLabel.text = String(multipleTimers![index]) + " seconds"
         
         if (multipleTimers![index] == 0) {
             timer.invalidate()
